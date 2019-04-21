@@ -106,8 +106,6 @@ extension DatabaseManager {
         
         }
         
-        
-        
         Database.prediction.registerModel(coreMLPredictiveModel, withName: ItemClassifierCoreMLPredictiveModel.name)
     }
     
@@ -226,7 +224,7 @@ extension DatabaseManager {
             return (results,true)
     }
     
-    
+    ////////////// This API is currently not in use in app //////////////////////////////////////
     func addItemToDBWithPredictionResult(_ imageData:Data, imageName:String, propertyName:String)->Bool {
         print(#function)
         guard let db = db else {

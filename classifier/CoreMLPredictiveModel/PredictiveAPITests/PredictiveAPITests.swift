@@ -12,14 +12,12 @@ import XCTest
 @testable import PredictiveAPI
 
 class PredictiveAPITests: XCTestCase {
-    var itemsClassifierService:ItemClassifierService = ItemClassifierService.init()
     var images:[String:[UIImage]] = [String:[UIImage]]()
     var testImage:Data!
     let dbMgr = DatabaseManager.shared
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        itemsClassifierService = ItemClassifierService()
-        testImage = self.loadTestImage()
+         testImage = self.loadTestImage()
 //        let utils = FileUtils.init()
 //        images = utils.loadImageFilesFromFolder("items")
 //         
@@ -41,16 +39,6 @@ class PredictiveAPITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceOpenFacePrediction() {
-        
-        // 1. Convert input images into [OpenFaceInput]
-        // measure only cost of prediction
-        self.measure {
-            for (name,image) in images {
-          //     let _ = try? itemsClassifierService.runItemClassifierModelOnImage(image)
-                }
-            }
-    }
     
   
 }

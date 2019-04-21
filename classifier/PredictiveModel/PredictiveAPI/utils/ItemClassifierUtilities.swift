@@ -5,7 +5,7 @@
 //  Created by Priya Rajagopal on 1/10/19.
 //  Copyright © 2019 Couchbase Inc. All rights reserved.
 //
-
+////////////// This class is currently not in use in app //////////////////////////////////////
 import Foundation
 import UIKit
 import CoreML
