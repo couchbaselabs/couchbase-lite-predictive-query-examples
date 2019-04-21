@@ -219,7 +219,7 @@ extension ItemTableViewController{
                     nameTextEntry?.text = name
                 }
                 else {
-                   nameTextEntry?.text = "Person" // some random text
+                   nameTextEntry?.text = NSLocalizedString("item", comment: "default item name") // some random text
                 }
                 
                 return cell
@@ -354,7 +354,7 @@ extension ItemTableViewController : UIImagePickerControllerDelegate , UINavigati
             self.userImageView.image = image
             self.imageUpdated = true
             self.doneButton.isEnabled = true
-            self.nameTextEntry?.text = "person"
+            self.nameTextEntry?.text = NSLocalizedString("item", comment: "default item name")
             picker.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }

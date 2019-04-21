@@ -146,15 +146,17 @@ extension DatabaseManager {
             let inputPhotoParam = Expression.dictionary([propertyName : Expression.parameter(imageName)])
             let inputImagePrediction = Function.prediction(model: modelName, input: inputPhotoParam)
         
-            // Find matching category as long as the match has a probability of > 0.7
+            // Find matching category as long as the match has a category probability of > 0.7
             let categoryKeyPath = "\(propertyName).\(kPredictionCategory)"
             let probabilityKeyPath = "\(propertyName).\(kPredictionProbability)"
             let query = QueryBuilder
                 .select(SelectResult.all(),SelectResult.expression(inputImagePrediction))
                 .from(DataSource.database(db))
                 .where(
-    inputImagePrediction.property(categoryKeyPath).equalTo(Expression.property(UserRecordDocumentKeys.tag.rawValue))
-                .and(inputImagePrediction.property(probabilityKeyPath).greaterThanOrEqualTo(Expression.double(0.7))))
+                 inputImagePrediction.property(categoryKeyPath)
+                                .equalTo(Expression.property(UserRecordDocumentKeys.tag.rawValue))
+                .and(inputImagePrediction.property(probabilityKeyPath)
+                    .greaterThanOrEqualTo(Expression.double(0.7))))
        
             // Set input parameters for query
             let params = Parameters()
@@ -166,23 +168,21 @@ extension DatabaseManager {
             var results:[UserRecord] = [UserRecord]()
     
             do {
-                //   print ("results are ...")
-                var num = 0
+                print ("results are ...")
                 for result in try query.execute() {
-                     //  print("Distance  is :\(result.toDictionary())")
                     let resultVal = result.dictionary(forKey: "items")
-                    print(resultVal)
-
+                    let matchDetails = result.dictionary(forKey: "$1")
+                    let matchProbability = matchDetails?.dictionary(forKey: "photo")?.value(forKey: "probability")
+                    print(result)
                     //print("Found \(resultVal?.count) matches")
                     if let name = resultVal?.string(forKey:  UserRecordDocumentKeys.tag.rawValue), let image = resultVal?.blob(forKey:  UserRecordDocumentKeys.photo.rawValue)?.content {
-                        let user = UserRecord.init(tag: name, photo: image, extended: nil)
+                        let tagAndMatch = "\(name) : \(matchProbability!)"
+                        let user = UserRecord.init(tag: tagAndMatch, photo: image, extended: nil)
                         // print("\(name):user")
                         results.append(user)
                     }
-                    num = num + 1
                 }
-                // print("Results is \(num-1)")
-    
+     
             }
             catch {
                 print("Error in query execution \(error)")

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="208" id="rAG-UT-0s8" customClass="CustomImageEntryTableViewCell" customModule="UserProfileDemo" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="208" id="rAG-UT-0s8" customClass="CustomImageEntryTableViewCell" customModule="PredictiveAPI" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="392" height="208"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rAG-UT-0s8" id="Zu7-Ui-Yw2">
@@ -21,14 +21,16 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user-thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="YCh-l0-XRm">
                         <rect key="frame" x="66" y="0.0" width="265" height="208"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-Jg-Nfd">
-                        <rect key="frame" x="182" y="178" width="46" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-Jg-Nfd">
+                        <rect key="frame" x="20" y="178" width="352" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="46" id="EgA-nL-rQI"/>
                             <constraint firstAttribute="height" constant="30" id="rRy-qL-PGC"/>
                         </constraints>
                         <state key="normal" title="Tap!">
-                            <color key="titleColor" red="0.047058823530000002" green="0.67450980390000004" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
                             <action selector="updateThumbnail:" destination="rAG-UT-0s8" eventType="touchUpInside" id="056-Vj-ZUz"/>
@@ -48,10 +50,10 @@
             <connections>
                 <outlet property="imageEntryView" destination="YCh-l0-XRm" id="86V-D1-b9Z"/>
             </connections>
-            <point key="canvasLocation" x="-85" y="75"/>
+            <point key="canvasLocation" x="-86.400000000000006" y="74.662668665667169"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="default-user-thumbnail" width="16" height="16"/>
+        <image name="default-user-thumbnail" width="383" height="356"/>
     </resources>
 </document>

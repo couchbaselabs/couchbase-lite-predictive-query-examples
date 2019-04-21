@@ -36,8 +36,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="bi2-ZW-BJX">
-                        <barButtonItem key="leftBarButtonItem" title="Add Item" id="kOx-20-RjG">
-                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Add Item" id="kOx-20-RjG">
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onAddItemTapped:" destination="9qh-fE-FOc" id="cpX-2s-w8W"/>
                             </connections>

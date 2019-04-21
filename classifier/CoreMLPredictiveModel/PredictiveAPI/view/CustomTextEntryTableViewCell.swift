@@ -11,7 +11,7 @@ import UIKit
 
 class CustomTextEntryTableViewCell: UITableViewCell {
     
-    private let defaultName = "person"
+    private let defaultName = NSLocalizedString("item", comment: "default item name") 
     public var name:String? {
         didSet {
             self.updateUI()
