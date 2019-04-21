@@ -150,17 +150,17 @@ extension DatabaseManager {
             let categoryKeyPath = "\(propertyName).\(kPredictionCategory)"
             let probabilityKeyPath = "\(propertyName).\(kPredictionProbability)"
             let query = QueryBuilder
-                .select(SelectResult.all(),SelectResult.expression(inputImagePrediction))
+                .select(SelectResult.all(),SelectResult.expression(inputImagePrediction).as("PredictionResult"))
                 .from(DataSource.database(db))
                 .where(
                  inputImagePrediction.property(categoryKeyPath)
-                                .equalTo(Expression.property(UserRecordDocumentKeys.tag.rawValue))
+                        .equalTo(Expression.property(UserRecordDocumentKeys.tag.rawValue) )
                 .and(inputImagePrediction.property(probabilityKeyPath)
                     .greaterThanOrEqualTo(Expression.double(0.7))))
        
             // Set input parameters for query
             let params = Parameters()
-        params.setBlob(Blob.init(contentType: "image/jpg", data: imageData), forName: imageName)
+            params.setBlob(Blob.init(contentType: "image/jpg", data: imageData), forName: imageName)
             query.parameters = params
     
             // Execute query
@@ -171,10 +171,9 @@ extension DatabaseManager {
                 print ("results are ...")
                 for result in try query.execute() {
                     let resultVal = result.dictionary(forKey: "items")
-                    let matchDetails = result.dictionary(forKey: "$1")
+                    let matchDetails = result.dictionary(forKey: "PredictionResult")
                     let matchProbability = matchDetails?.dictionary(forKey: "photo")?.value(forKey: "probability")
-                    print(result)
-                    //print("Found \(resultVal?.count) matches")
+                    print(result.toDictionary())
                     if let name = resultVal?.string(forKey:  UserRecordDocumentKeys.tag.rawValue), let image = resultVal?.blob(forKey:  UserRecordDocumentKeys.photo.rawValue)?.content {
                         let tagAndMatch = "\(name) : \(matchProbability!)"
                         let user = UserRecord.init(tag: tagAndMatch, photo: image, extended: nil)

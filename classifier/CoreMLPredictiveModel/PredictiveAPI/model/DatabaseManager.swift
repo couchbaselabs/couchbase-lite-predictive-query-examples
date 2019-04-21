@@ -182,7 +182,7 @@ extension DatabaseManager {
             // Find matching category as long as the match has a probability of > 0.7
     
                let query = QueryBuilder
-                .select(SelectResult.all(),SelectResult.expression(inputImagePrediction))
+                .select(SelectResult.all(),SelectResult.expression(inputImagePrediction).as("PredictionResult"))
                 .from(DataSource.database(db))
                 .where(inputImagePrediction.property(categoryKeyPath)
                             .equalTo(Expression.property(UserRecordDocumentKeys.tag.rawValue))
@@ -200,21 +200,20 @@ extension DatabaseManager {
     
             do {
                 //   print ("results are ...")
-                var num = 0
                 for result in try query.execute() {
                      //  print("Distance  is :\(result.toDictionary())")
                     let resultVal = result.dictionary(forKey: "items")
-                    print(resultVal)
-
+                    print(result.toDictionary())
+                    let matchDetails = result.dictionary(forKey: "PredictionResult")
+                    let matchProbability = matchDetails?.value(forKey: probabilityKeyPath)
                     //print("Found \(resultVal?.count) matches")
                     if let name = resultVal?.string(forKey:  UserRecordDocumentKeys.tag.rawValue), let image = resultVal?.blob(forKey:  UserRecordDocumentKeys.photo.rawValue)?.content {
-                        let user = UserRecord.init(tag: name, photo: image, extended: nil)
+                        let tagAndMatch = "\(name) : \(matchProbability!)"
+                        let user = UserRecord.init(tag: tagAndMatch, photo: image, extended: nil)
                         // print("\(name):user")
                         results.append(user)
                     }
-                    num = num + 1
                 }
-                // print("Results is \(num-1)")
     
             }
             catch {
