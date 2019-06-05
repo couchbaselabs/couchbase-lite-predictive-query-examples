@@ -32,7 +32,7 @@ sh install_10.1.sh # this is for xcode 10.1 compatible build
 ## Running App 
 - open  the .xcodeproj using Xcode . Build and run and project
 - To test app, upload image belonging to one of the categories in the [Caltech 101](http://www.vision.caltech.edu/Image_Datasets/Caltech101/Caltech101.html)  dataset. *Currently, the app only supports uploading of files from the photo album*
-![](classifier_demo.gif)
+![](http://blog.couchbase.com/wp-content/uploads/2019/06/classifier_demo.gif)
 
 ## Description
 The app does the following :
