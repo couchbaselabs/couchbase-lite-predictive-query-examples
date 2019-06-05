@@ -39,11 +39,6 @@
 		5FC2689421E7C70500237D46 /* ItemClassifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC2689321E7C70500237D46 /* ItemClassifierService.swift */; };
 		5FCA40AD21E9310500B5FDE8 /* ItemClassifierPredictiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA40AC21E9310500B5FDE8 /* ItemClassifierPredictiveModel.swift */; };
 		5FCA40B321EB9DCB00B5FDE8 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA40B221EB9DCB00B5FDE8 /* CustomErrors.swift */; };
-		5FCA40C121ECE59800B5FDE8 /* Abba_Eban.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA40C021ECE59800B5FDE8 /* Abba_Eban.jpg */; };
-		5FCA40D821F039BD00B5FDE8 /* Andre_Agassi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA40D721F039BD00B5FDE8 /* Andre_Agassi.jpg */; };
-		5FCA40D921F039BD00B5FDE8 /* Andre_Agassi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA40D721F039BD00B5FDE8 /* Andre_Agassi.jpg */; };
-		5FCA40EA21F517E200B5FDE8 /* Serena_Williams_0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA40E921F517E200B5FDE8 /* Serena_Williams_0001.jpg */; };
-		5FCA40EB21F517E200B5FDE8 /* Serena_Williams_0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA40E921F517E200B5FDE8 /* Serena_Williams_0001.jpg */; };
 		5FF5795A226CCA1500254FFE /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF57959226CCA1500254FFE /* CouchbaseLiteSwift.framework */; };
 		5FF5795B226CCA8000254FFE /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF57959226CCA1500254FFE /* CouchbaseLiteSwift.framework */; };
 		5FF5795C226CCA8000254FFE /* CouchbaseLiteSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF57959226CCA1500254FFE /* CouchbaseLiteSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -104,9 +99,6 @@
 		5FC2689321E7C70500237D46 /* ItemClassifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemClassifierService.swift; sourceTree = "<group>"; };
 		5FCA40AC21E9310500B5FDE8 /* ItemClassifierPredictiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemClassifierPredictiveModel.swift; sourceTree = "<group>"; };
 		5FCA40B221EB9DCB00B5FDE8 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
-		5FCA40C021ECE59800B5FDE8 /* Abba_Eban.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Abba_Eban.jpg; sourceTree = "<group>"; };
-		5FCA40D721F039BD00B5FDE8 /* Andre_Agassi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Andre_Agassi.jpg; sourceTree = "<group>"; };
-		5FCA40E921F517E200B5FDE8 /* Serena_Williams_0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Serena_Williams_0001.jpg; sourceTree = "<group>"; };
 		5FF57959226CCA1500254FFE /* CouchbaseLiteSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLiteSwift.framework; path = iOS/CouchbaseLiteSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,9 +216,6 @@
 		5F6EF95D21E79FE600F143CF /* PredictiveAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				5FCA40E921F517E200B5FDE8 /* Serena_Williams_0001.jpg */,
-				5FCA40D721F039BD00B5FDE8 /* Andre_Agassi.jpg */,
-				5FCA40C021ECE59800B5FDE8 /* Abba_Eban.jpg */,
 				5F0ED5DF2213D270001FD4D1 /* headphone.jpg */,
 				5F6EF95E21E79FE600F143CF /* PredictiveAPITests.swift */,
 				5F6EF96021E79FE600F143CF /* Info.plist */,
@@ -317,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6EF95421E79FE600F143CF /* LaunchScreen.storyboard in Resources */,
-				5FCA40D821F039BD00B5FDE8 /* Andre_Agassi.jpg in Resources */,
 				5F0ED5DA2213C144001FD4D1 /* items in Resources */,
 				5F544FD421E8ED5300EBEC58 /* CustomImageEntryTableViewCell.xib in Resources */,
 				5F0ED5E322146D50001FD4D1 /* CustomImageCollectionViewCell.xib in Resources */,
@@ -325,7 +313,6 @@
 				5F6EF94F21E79FE400F143CF /* Main.storyboard in Resources */,
 				5F0ED5E02213D270001FD4D1 /* headphone.jpg in Resources */,
 				5F0ED5DD2213CBFE001FD4D1 /* items.cblite2 in Resources */,
-				5FCA40EA21F517E200B5FDE8 /* Serena_Williams_0001.jpg in Resources */,
 				5F544FD021E8ECB100EBEC58 /* CustomTextEntryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,9 +325,6 @@
 				5F0ED5E12213D270001FD4D1 /* headphone.jpg in Resources */,
 				5F0ED5DB2213C144001FD4D1 /* items in Resources */,
 				5F0ED5DE2213CBFE001FD4D1 /* items.cblite2 in Resources */,
-				5FCA40EB21F517E200B5FDE8 /* Serena_Williams_0001.jpg in Resources */,
-				5FCA40C121ECE59800B5FDE8 /* Abba_Eban.jpg in Resources */,
-				5FCA40D921F039BD00B5FDE8 /* Andre_Agassi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
