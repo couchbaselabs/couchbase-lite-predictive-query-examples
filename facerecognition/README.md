@@ -46,5 +46,5 @@ The app does the following :
 
 ## Known Issues
 The app simply passes the uploaded image directly through the `OpenFace` model without any preprocessing. Instead, the image must be passed through a face detector stage that will detect face, then transform it , crop it  to desired size and the cropped face must be then passed through the neural network that will generate the fingerprint.
-For this reason, the matches are not predicted accurately unless we do a lookup with an image that is exactly the one in the database. This is a limitation of the model and not  the Couchbase Lite Prediction API. 
+For this reason, the matches are not predicted accurately unless we do a lookup with an image that is exactly the one in the database. This is a limitation of the app implementation and not  the Couchbase Lite Prediction API. 
 
