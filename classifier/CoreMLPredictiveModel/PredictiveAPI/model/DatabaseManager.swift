@@ -173,11 +173,11 @@ extension DatabaseManager {
         
             // DO prediction on input param
             let inputPhotoParam = Expression.dictionary([propertyName : Expression.parameter(imageName)])
+            let inputImagePrediction = Function.prediction(model: modelName, input: inputPhotoParam)
         
             let categoryKeyPath = ItemClassifierCoreMLPredictiveModel.outFeatureNames.kPredictionCategory.rawValue
             let probabilityKeyPath = ItemClassifierCoreMLPredictiveModel.outFeatureNames.kPredictionProbability.rawValue
         
-            let inputImagePrediction = Function.prediction(model: modelName, input: inputPhotoParam)
         
             // Find matching category as long as the match has a probability of > 0.7
     
