@@ -67,3 +67,12 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+ios/classifier/CoreMLPredictiveModel/iOS/
+ios/classifier/CoreMLPredictiveModel/macOS/
+ios/classifier/PredictiveModel/iOS/
+ios/classifier/PredictiveModel/macOS/
+ios/facerecognition/CoreMLPredictiveModel/iOS
+ios/facerecognition/PredictiveModel/iOS
+ios/facerecognition/PredictiveModel/macOS
+ios/facerecognition/CoreMLPredictiveModel/macOS
