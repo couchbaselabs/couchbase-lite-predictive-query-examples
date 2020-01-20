@@ -4,8 +4,8 @@ These sample apps demonstrate the use of Couchbase Lite Prediction Queries using
 The app includes a prebuilt Couchbase Lite database that includes a bunch of items, each item includes  a "tag" property, which is the category to which the item belongs. 
 
 ## Version
--Xcode 10.1+ /swift 5
--Couchbase Lite 2.5 EE
+-Xcode 11.1+ /swift 5.1+
+-Couchbase Lite 2.7 EE
 
 ## Repo structure
 There are two versions of the app
@@ -21,12 +21,12 @@ This implements  Couchbase Lite's `PredictiveModel` interface . The implementati
 git clone https://github.com/rajagp/PredictiveQueriesWithCouchbaseLite.git
 ```
 - Go to the appropriate app directory and install Couchbase Lite.
-Run `install_10.1.sh` for xcode 10.1 compatible build of Couchbase Lite. Run `install_10.2.sh` for xcode 10.2 compatible build of Couchbase Lite
+Run `install_11.1.sh` for xcode 11 compatible build of Couchbase Lite.
 
 ```
 cd /path/to/cloned/repo/ios/PredictiveQueriesWithCouchbaseLite/classifier/PredictiveModel
 
-sh install_10.1.sh # this is for xcode 10.1 compatible build
+sh install_11.1.sh # this is for xcode 11  compatible build
 
 ```
 ## Running App 
